@@ -8,8 +8,8 @@ services:
       dockerfile: .docker/node.development.dockerfile
     volumes:
       - .:/var/www/docker-vue
+      - /var/www/docker-vue/node_modules
     environment:
-      - NODE_ENV=dev
       - npm_config_unsafe_perm=true
     ports:
       - "8080:8080"
