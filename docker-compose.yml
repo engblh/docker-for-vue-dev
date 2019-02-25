@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    container_name: docker-vue
+    image: docker-vue
+    build:
+      context: .
+      dockerfile: .docker/node.development.dockerfile
+    volumes:
+      - .:/var/www/docker-vue
+    environment:
+      - NODE_ENV=dev
+      - npm_config_unsafe_perm=true
+    ports:
+      - "8080:8080"
